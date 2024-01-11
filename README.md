@@ -113,7 +113,7 @@ It's important that all the nodes must discover themselves in the network. I adv
 ```
 To grant that you have all the nodes connected in the MicroK8s cluster:
 ```
-root@k8s-controller:~# **microk8s kubectl get nodes**
+root@k8s-controller:~# microk8s kubectl get nodes
 NAME             STATUS   ROLES    AGE     VERSION
 k8s-node2        Ready    <none>   8m39s   v1.28.3
 k8s-node1        Ready    <none>   11m     v1.28.3
