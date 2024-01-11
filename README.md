@@ -46,7 +46,7 @@
    $ sudo ufw allow 2380/tcp - etcd
    $ sudo ufw allow 1338/tcp - containerd
    ```
-   ### To check the firewall rules applied: <br>
+   #### To check the firewall rules applied: <br>
    ```
    $ sudo ufw enable
    $ sudo ufw status
@@ -60,8 +60,7 @@
    $ sudo su
    # microk8s status
    ```
-   
-   
+
 ## 5. Install Rancher <br>
    
-9. Deploy Keycloak 23.0.4 with PosgreSQL <br>
+## 6. Deploy Keycloak 23.0.4 with PosgreSQL <br>
