@@ -103,7 +103,15 @@ and replace the API server endpoints with the one provided by the loadbalancer i
     /var/snap/microk8s/current/args/traefik/provider.yaml
 ```
 
-I
+It's important that all the nodes must discover themselves in the network. I advice to set in all nodes the /etc/hosts file like this:
+
+```
+   10.0.0.4 k8s-controller
+   10.0.0.5 k8s-node1
+   10.0.0.6 k8s-node2
+   10.0.0.7 k8s-node3
+```
+ 
 ## 5. Install Rancher <br>
    
 ## 6. Deploy Keycloak 23.0.4 with PosgreSQL <br>
