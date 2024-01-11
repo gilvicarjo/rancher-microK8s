@@ -7,6 +7,16 @@
    OS: Ubuntu 20.04 TLS <br>
    RAM: 4GB <br>
    CPU: 2 <br>
+
+   10.0.0.4 k8s-controller
+   10.0.0.5 k8s-node1
+   10.0.0.6 k8s-node2
+   10.0.0.7 k8s-node3
+
+   172.174.255.96 k8s-controller
+   74.235.148.231 k8s-node1
+   20.127.155.255 k8s-node2
+   172.203.243.162 k8s-node3
    
 ## 2. Access the VMs <br>
    A SSH Private Key is created to access the 4 VMs <br>
@@ -67,6 +77,18 @@ microk8s is running
 high-availability: no
   datastore master nodes: 127.0.0.1:19001
   datastore standby nodes: none
+```
+## 5. Check Nodes
+```
+# microk8s kubectl get nodes
+```
+## 6. Attach nodes to cluster
+```
+# microk8s add node
+```
+To renew the token to join
+```
+# microk8s add node
 ```
 
 ## 5. Install Rancher <br>
