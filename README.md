@@ -91,6 +91,19 @@ To renew the token to join
 microk8s add node
 ```
 
+After joining a new node every ~3min you should receive the following message: 
+
+```
+The node has joined the cluster and will appear in the nodes list in a few seconds.
+
+This worker node gets automatically configured with the API server endpoints.
+If the API servers are behind a loadbalancer please set the '--refresh-interval' to '0s' in:
+    /var/snap/microk8s/current/args/apiserver-proxy
+and replace the API server endpoints with the one provided by the loadbalancer in:
+    /var/snap/microk8s/current/args/traefik/provider.yaml
+```
+
+I
 ## 5. Install Rancher <br>
    
 ## 6. Deploy Keycloak 23.0.4 with PosgreSQL <br>
