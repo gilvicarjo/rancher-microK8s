@@ -42,7 +42,7 @@
    $ sudo ufw status
    or
    $ sudo ufw disable
-5. Check MicroK8s status
+6. Check MicroK8s status
    $ sudo su
    ´´´ # microk8s status ´´´
 7. Install Rancher
