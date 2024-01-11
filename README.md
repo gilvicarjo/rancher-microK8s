@@ -42,7 +42,7 @@
    $ sudo ufw allow 2380/tcp - etcd <br>
    $ sudo ufw allow 1338/tcp - containerd <br>
    
-   - To check the firewall rules applied: <br>
+   ### To check the firewall rules applied: <br>
    $ sudo ufw enable <br>
    $ sudo ufw status <br>
    or <br>
