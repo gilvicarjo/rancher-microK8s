@@ -8,15 +8,15 @@
    RAM: 4GB <br>
    CPU: 2 <br>
 
-   10.0.0.4 k8s-controller
-   10.0.0.5 k8s-node1
-   10.0.0.6 k8s-node2
-   10.0.0.7 k8s-node3
+   10.0.0.4 k8s-controller <br>
+   10.0.0.5 k8s-node1 <br>
+   10.0.0.6 k8s-node2 <br>
+   10.0.0.7 k8s-node3 <br>
 
-   172.174.255.96 k8s-controller
-   74.235.148.231 k8s-node1
-   20.127.155.255 k8s-node2
-   172.203.243.162 k8s-node3
+   172.174.255.96 k8s-controller <br>
+   74.235.148.231 k8s-node1 <br>
+   20.127.155.255 k8s-node2 <br>
+   172.203.243.162 k8s-node3 <br>
    
 ## 2. Access the VMs <br>
    A SSH Private Key is created to access the 4 VMs <br>
