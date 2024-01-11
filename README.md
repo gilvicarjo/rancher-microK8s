@@ -42,9 +42,9 @@
    $ sudo ufw status <br>
    or <br>
    $ sudo ufw disable <br>
-6. Check MicroK8s status 
-   $ sudo su
-   ´´´ # microk8s status ´´´
-7. Install Rancher
+6. Check MicroK8s status <br>
+   $ sudo su <br>
+   ´´´ # microk8s status ´´´ <br>
+7. Install Rancher <br>
    
-8. Deploy Keycloak 23.0.4 with PosgreSQL
+8. Deploy Keycloak 23.0.4 with PosgreSQL <br>
