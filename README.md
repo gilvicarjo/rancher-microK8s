@@ -11,9 +11,10 @@
 ## 2. Access the VMs <br>
    A SSH Private Key is created to access the 4 VMs <br>
    All you need to do is execute in your terminal: <br>
-   ssh -i {.pem file} {user}@{host} <br>
-   ssh -i tml/k8s-dev.pem azureuser@k8s-node3 <br>
-   
+   ```
+   ssh -i {.pem file} {user}@{host}
+   ssh -i tml/k8s-dev.pem azureuser@k8s-node3
+   ```
 ## 3. Install MicroK8s <br>
  ```
    $ sudo apt update
