@@ -1,12 +1,12 @@
 # rancher-microK8s
 
-1. Prepare 4 VMs with Ubuntu
-   1 Controller Node
-   3 Worker Nodes
-   The VMs were provisioned in Azure Cloud
-   OS: Ubuntu 20.04 TLS
-   RAM: 4GB
-   CPU: 2
+1. Prepare 4 VMs with Ubuntu \n
+   1 Controller Node \n
+   3 Worker Nodes \n
+   The VMs were provisioned in Azure Cloud \n
+   OS: Ubuntu 20.04 TLS \n
+   RAM: 4GB \n
+   CPU: 2 \n
 2. Access the VMs
    A SSH Private Key is created to access the 4 VMs
    All you need to do is execute in your terminal:
