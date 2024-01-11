@@ -37,5 +37,14 @@
    $ sudo ufw allow 10256/tcp - kube-proxy
    $ sudo ufw allow 2380/tcp - etcd
    $ sudo ufw allow 1338/tcp - containerd
-6. Install Rancher
-7. Deploy Keycloak 23.0.4 with PosgreSQL
+   To check the firewall rules applied:
+   $ sudo ufw enable
+   $ sudo ufw status
+   or
+   $ sudo ufw disable
+5. Check MicroK8s status
+   $ sudo su
+   ´´´ # microk8s status ´´´
+7. Install Rancher
+   
+8. Deploy Keycloak 23.0.4 with PosgreSQL
