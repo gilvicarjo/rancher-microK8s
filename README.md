@@ -15,10 +15,12 @@
    ssh -i tml/k8s-dev.pem azureuser@k8s-node3 <br>
    
 ## 3. Install MicroK8s <br>
+ ```
    $ sudo apt update <br>
    $ apt list --upgradable<br>
    $ sudo apt upgrade -y <br>
    $ sudo snap install microk8s --classic <br>
+ ```
    microk8s (1.28/stable) v1.28.3 from Canonical✓ installed <br>
    https://microk8s.io/docs/services-and-ports to get the necessary ports to be open between the hosts <br>
 
