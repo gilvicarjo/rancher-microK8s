@@ -16,10 +16,10 @@
    
 ## 3. Install MicroK8s <br>
  ```
-   $ sudo apt update <br>
-   $ apt list --upgradable<br>
-   $ sudo apt upgrade -y <br>
-   $ sudo snap install microk8s --classic <br>
+   $ sudo apt update
+   $ apt list --upgradable
+   $ sudo apt upgrade -y
+   $ sudo snap install microk8s --classic
  ```
    microk8s (1.28/stable) v1.28.3 from Canonical✓ installed <br>
    https://microk8s.io/docs/services-and-ports to get the necessary ports to be open between the hosts <br>
