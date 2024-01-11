@@ -41,20 +41,20 @@
    sudo ufw allow 16255/tcp
    sudo ufw allow 25000/tcp
    sudo ufw allow 12379/tcp
-   sudo ufw allow 10257/tcp - kube-controller
-   sudo ufw allow 10259/tcp - kube-scheduler
-   sudo ufw allow 19001/tcp - dqlite
-   sudo ufw allow 4789/udp  - calico
+   sudo ufw allow 10257/tcp
+   sudo ufw allow 10259/tcp
+   sudo ufw allow 19001/tcp
+   sudo ufw allow 4789/udp
    ```
    - Services binding to the localhost interface <br>
    ```
-   sudo ufw allow 10248/tcp - kubelet
-   sudo ufw allow 10249/tcp - kube-proxy
-   sudo ufw allow 10251/tcp - kube-scheduler
-   sudo ufw allow 10252/tcp - kube-controller
-   sudo ufw allow 10256/tcp - kube-proxy
-   sudo ufw allow 2380/tcp - etcd
-   sudo ufw allow 1338/tcp - containerd
+   sudo ufw allow 10248/tcp
+   sudo ufw allow 10249/tcp
+   sudo ufw allow 10251/tcp
+   sudo ufw allow 10252/tcp
+   sudo ufw allow 10256/tcp
+   sudo ufw allow 2380/tcp
+   sudo ufw allow 1338/tcp
    ```
    #### To check the firewall rules applied: <br>
    ```
