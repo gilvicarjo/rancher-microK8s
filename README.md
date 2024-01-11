@@ -44,8 +44,7 @@
    $ sudo ufw disable <br>
 6. Check MicroK8s status <br>
    $ sudo su <br>
-   ´´´markdown
-   # microk8s status
+   ´´´markdown # microk8s status
    ´´´
    
 8. Install Rancher <br>
