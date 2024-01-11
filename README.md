@@ -111,6 +111,15 @@ It's important that all the nodes must discover themselves in the network. I adv
    10.0.0.6 k8s-node2
    10.0.0.7 k8s-node3
 ```
+To grant that you have all the nodes connected in the MicroK8s cluster:
+```
+root@k8s-controller:~# **microk8s kubectl get nodes**
+NAME             STATUS   ROLES    AGE     VERSION
+k8s-node2        Ready    <none>   8m39s   v1.28.3
+k8s-node1        Ready    <none>   11m     v1.28.3
+k8s-controller   Ready    <none>   16m     v1.28.3
+k8s-node3        Ready    <none>   5m12s   v1.28.3
+```
  
 ## 5. Install Rancher <br>
    
