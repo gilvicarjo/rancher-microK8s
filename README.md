@@ -79,9 +79,15 @@ high-availability: no
   datastore standby nodes: none
 ```
 ## 5. Check Nodes
+It's important that all the nodes must discover themselves in the network. I advice to set in all nodes the /etc/hosts file like this:
+
 ```
-microk8s kubectl get nodes
+   10.0.0.4 k8s-controller
+   10.0.0.5 k8s-node1
+   10.0.0.6 k8s-node2
+   10.0.0.7 k8s-node3
 ```
+
 ## 6. Attach nodes to cluster
 ```
 microk8s add-node
@@ -103,14 +109,7 @@ and replace the API server endpoints with the one provided by the loadbalancer i
     /var/snap/microk8s/current/args/traefik/provider.yaml
 ```
 
-It's important that all the nodes must discover themselves in the network. I advice to set in all nodes the /etc/hosts file like this:
 
-```
-   10.0.0.4 k8s-controller
-   10.0.0.5 k8s-node1
-   10.0.0.6 k8s-node2
-   10.0.0.7 k8s-node3
-```
 To grant that you have all the nodes connected in the MicroK8s cluster:
 ```
 root@k8s-controller:~# microk8s kubectl get nodes
