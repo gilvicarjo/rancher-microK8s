@@ -13,7 +13,7 @@
    10.0.0.6 k8s-node2 <br>
    10.0.0.7 k8s-node3 <br>
 
-   172.174.255.96 k8s-controller <br>
+   172.208.98.42 k8s-controller <br>
    74.235.148.231 k8s-node1 <br>
    20.127.155.255 k8s-node2 <br>
    172.203.243.162 k8s-node3 <br>
