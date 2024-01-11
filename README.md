@@ -60,6 +60,14 @@
    $ sudo su
    # microk8s status
    ```
+You should see the following status:
+```
+root@k8s-controller:~# microk8s status
+microk8s is running
+high-availability: no
+  datastore master nodes: 127.0.0.1:19001
+  datastore standby nodes: none
+```
 
 ## 5. Install Rancher <br>
    
