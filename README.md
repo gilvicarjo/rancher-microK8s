@@ -36,11 +36,11 @@
 
    - Services binding to the default Host interface <br>
    ```
-   sudo ufw allow 16443/tcp - API server
-   sudo ufw allow 10250/tcp - kubelet
-   sudo ufw allow 16255/tcp - kubelet
-   sudo ufw allow 25000/tcp - cluster-agent
-   sudo ufw allow 12379/tcp - etcd
+   sudo ufw allow 16443/tcp
+   sudo ufw allow 10250/tcp
+   sudo ufw allow 16255/tcp
+   sudo ufw allow 25000/tcp
+   sudo ufw allow 12379/tcp
    sudo ufw allow 10257/tcp - kube-controller
    sudo ufw allow 10259/tcp - kube-scheduler
    sudo ufw allow 19001/tcp - dqlite
@@ -80,15 +80,15 @@ high-availability: no
 ```
 ## 5. Check Nodes
 ```
-# microk8s kubectl get nodes
+microk8s kubectl get nodes
 ```
 ## 6. Attach nodes to cluster
 ```
-# microk8s add node
+microk8s add-node
 ```
 To renew the token to join
 ```
-# microk8s add node
+microk8s add node
 ```
 
 ## 5. Install Rancher <br>
