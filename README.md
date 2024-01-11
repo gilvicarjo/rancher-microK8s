@@ -36,38 +36,38 @@
 
    - Services binding to the default Host interface <br>
    ```
-   $ sudo ufw allow 16443/tcp - API server
-   $ sudo ufw allow 10250/tcp - kubelet
-   $ sudo ufw allow 16255/tcp - kubelet
-   $ sudo ufw allow 25000/tcp - cluster-agent
-   $ sudo ufw allow 12379/tcp - etcd
-   $ sudo ufw allow 10257/tcp - kube-controller
-   $ sudo ufw allow 10259/tcp - kube-scheduler
-   $ sudo ufw allow 19001/tcp - dqlite
-   $ sudo ufw allow 4789/udp  - calico
+   sudo ufw allow 16443/tcp - API server
+   sudo ufw allow 10250/tcp - kubelet
+   sudo ufw allow 16255/tcp - kubelet
+   sudo ufw allow 25000/tcp - cluster-agent
+   sudo ufw allow 12379/tcp - etcd
+   sudo ufw allow 10257/tcp - kube-controller
+   sudo ufw allow 10259/tcp - kube-scheduler
+   sudo ufw allow 19001/tcp - dqlite
+   sudo ufw allow 4789/udp  - calico
    ```
    - Services binding to the localhost interface <br>
    ```
-   $ sudo ufw allow 10248/tcp - kubelet
-   $ sudo ufw allow 10249/tcp - kube-proxy
-   $ sudo ufw allow 10251/tcp - kube-scheduler
-   $ sudo ufw allow 10252/tcp - kube-controller
-   $ sudo ufw allow 10256/tcp - kube-proxy
-   $ sudo ufw allow 2380/tcp - etcd
-   $ sudo ufw allow 1338/tcp - containerd
+   sudo ufw allow 10248/tcp - kubelet
+   sudo ufw allow 10249/tcp - kube-proxy
+   sudo ufw allow 10251/tcp - kube-scheduler
+   sudo ufw allow 10252/tcp - kube-controller
+   sudo ufw allow 10256/tcp - kube-proxy
+   sudo ufw allow 2380/tcp - etcd
+   sudo ufw allow 1338/tcp - containerd
    ```
    #### To check the firewall rules applied: <br>
    ```
-   $ sudo ufw enable
-   $ sudo ufw status
+   sudo ufw enable
+   sudo ufw status
    ```
    #### To disable it
    ```
-   $ sudo ufw disable
+   sudo ufw disable
    ```
 ## 4. Check MicroK8s status <br>
    ```
-   $ sudo su
+   sudo su
    # microk8s status
    ```
 You should see the following status:
