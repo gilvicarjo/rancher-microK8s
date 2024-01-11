@@ -43,8 +43,8 @@
    or <br>
    $ sudo ufw disable <br>
 6. Check MicroK8s status <br>
-   $ sudo su <br>
    ```
+   $ sudo su <br>
    # microk8s status
    ```
    
