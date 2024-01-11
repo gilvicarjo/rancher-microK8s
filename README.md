@@ -1,6 +1,6 @@
 # rancher-microK8s
 
-1. Prepare 4 VMs with Ubuntu \n
+1. Prepare 4 VMs with Ubuntu\n
    1 Controller Node \n
    3 Worker Nodes \n
    The VMs were provisioned in Azure Cloud \n
