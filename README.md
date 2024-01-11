@@ -1,6 +1,6 @@
 # rancher-microK8s
 
-1. Prepare 4 VMs with Ubuntu <br>
+## 1. Prepare 4 VMs with Ubuntu <br>
    1 Controller Node <br>
    3 Worker Nodes <br>
    The VMs were provisioned in Azure Cloud <br>
@@ -8,13 +8,13 @@
    RAM: 4GB <br>
    CPU: 2 <br>
    
-2. Access the VMs <br>
+## 2. Access the VMs <br>
    A SSH Private Key is created to access the 4 VMs <br>
    All you need to do is execute in your terminal: <br>
    ssh -i {.pem file} {user}@{host} <br>
    ssh -i tml/k8s-dev.pem azureuser@k8s-node3 <br>
    
-4. Install MicroK8s <br>
+## 3. Install MicroK8s <br>
    $ sudo apt update <br>
    $ apt list --upgradable<br>
    $ sudo apt upgrade -y <br>
@@ -48,13 +48,13 @@
    or <br>
    $ sudo ufw disable <br>
    
-6. Check MicroK8s status <br>
+## 4. Check MicroK8s status <br>
    ```
    $ sudo su <br>
    # microk8s status
    ```
    
    
-8. Install Rancher <br>
+## 5. Install Rancher <br>
    
 9. Deploy Keycloak 23.0.4 with PosgreSQL <br>
