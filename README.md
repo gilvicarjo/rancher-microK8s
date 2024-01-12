@@ -123,7 +123,15 @@ k8s-node3        Ready    <none>   5m12s   v1.28.3
 ## 6. Make Cluster Fault Tolerant
 Run this command on all hosts in the cluster
 ```
-sudo echo "failure-domain=42" > /var/snap/microk8s/current/args/ha-conf
+echo "failure-domain=42" > /var/snap/microk8s/current/args/ha-conf
+```
+Restart MicroK8s in Controller Node
+```
+microk8s stop && microk8s start
+```
+Restart MicroK8s in Worker Nodes
+```
+snap stop microk8s && snap start microk8s
 ```
 
 ## 5. Install Rancher <br>
