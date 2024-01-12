@@ -1,8 +1,8 @@
 # rancher-microK8s
 
-### I. Setup Microk8s Cluster
+## I. Setup Microk8s Cluster
 
-## 1. Prepare 4 VMs with Ubuntu <br>
+### 1. Prepare 4 VMs with Ubuntu <br>
    1 Controller Node <br>
    3 Worker Nodes <br>
    The VMs were provisioned in Azure Cloud <br>
@@ -20,13 +20,13 @@
    20.127.155.255 k8s-node2 <br>
    172.203.243.162 k8s-node3 <br>
    
-## 2. Access the VMs <br>
+### 2. Access the VMs <br>
    A SSH Private Key is created to access the 4 VMs <br>
    All you need to do is execute in your terminal: <br>
    ```
    ssh -i {.pem file} {user}@{host}
    ```
-## 3. Install MicroK8s <br>
+### 3. Install MicroK8s <br>
  ```
    sudo apt update
    apt list --upgradable
@@ -67,7 +67,7 @@
    ```
    sudo ufw disable
    ```
-## 4. Check MicroK8s status <br>
+### 4. Check MicroK8s status <br>
    ```
    sudo su
    # microk8s status
@@ -80,7 +80,7 @@ high-availability: no
   datastore master nodes: 127.0.0.1:19001
   datastore standby nodes: none
 ```
-## 5. Check Nodes
+### 5. Check Nodes
 It's important that all the nodes must discover themselves in the network. I advice to set in all nodes the /etc/hosts file like this:
 
 ```
@@ -90,7 +90,7 @@ It's important that all the nodes must discover themselves in the network. I adv
    10.0.0.7 k8s-node3
 ```
 
-## 6. Attach nodes to cluster
+### 6. Attach nodes to cluster
 ```
 microk8s add-node
 ```
@@ -122,7 +122,7 @@ k8s-controller   Ready    <none>   16m     v1.28.3
 k8s-node3        Ready    <none>   5m12s   v1.28.3
 ```
 
-## 6. Make Cluster Fault Tolerant
+### 6. Make Cluster Fault Tolerant
 Run this command on all hosts in the cluster
 ```
 echo "failure-domain=42" > /var/snap/microk8s/current/args/ha-conf
@@ -136,6 +136,16 @@ Restart MicroK8s in Worker Nodes
 snap stop microk8s && snap start microk8s
 ```
 
-### II. Setup Rancher
+## II. Setup Rancher
 
-### III. Setup Keycloak 23.0.4
+### 1. Enable Microk8s plugins for Rancher
+```
+microk8s enable rbac dns dashboard storage ingress helm3 metallb prometheus
+```
+To set MetalLB we can consider:
+```
+Enabling MetalLB
+Enter each IP address range delimited by comma (e.g. '10.64.140.43-10.64.140.49,192.168.0.105-192.168.0.111'): 10.64.140.43-10.64.140.49
+```
+
+## III. Setup Keycloak 23.0.4
