@@ -119,7 +119,13 @@ k8s-node1        Ready    <none>   11m     v1.28.3
 k8s-controller   Ready    <none>   16m     v1.28.3
 k8s-node3        Ready    <none>   5m12s   v1.28.3
 ```
- 
+
+## 6. Make Cluster Fault Tolerant
+Run this command on all hosts in the cluster
+```
+sudo echo "failure-domain=42" > /var/snap/microk8s/current/args/ha-conf
+```
+
 ## 5. Install Rancher <br>
    
 ## 6. Deploy Keycloak 23.0.4 with PosgreSQL <br>
