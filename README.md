@@ -1,5 +1,7 @@
 # rancher-microK8s
 
+### I. Setup Microk8s Cluster
+
 ## 1. Prepare 4 VMs with Ubuntu <br>
    1 Controller Node <br>
    3 Worker Nodes <br>
@@ -134,6 +136,6 @@ Restart MicroK8s in Worker Nodes
 snap stop microk8s && snap start microk8s
 ```
 
-## 5. Install Rancher <br>
-   
-## 6. Deploy Keycloak 23.0.4 with PosgreSQL <br>
+### II. Setup Rancher
+
+### III. Setup Keycloak 23.0.4
