@@ -31,7 +31,7 @@
    sudo apt update
    apt list --upgradable
    sudo apt upgrade -y
-   sudo snap install microk8s --classic
+   sudo snap install microk8s --classic --channel=1.27/stable
  ```
    microk8s (1.28/stable) v1.28.3 from Canonical✓ installed <br>
    https://microk8s.io/docs/services-and-ports to get the necessary ports to be open between the hosts <br>
@@ -147,5 +147,86 @@ To set MetalLB we can consider:
 Enabling MetalLB
 Enter each IP address range delimited by comma (e.g. '10.64.140.43-10.64.140.49,192.168.0.105-192.168.0.111'): 10.64.140.43-10.64.140.49
 ```
+### 2. Add permission to Rancher to control the Kubernetes cluster
+Run this command in all nodes on the cluster
+```
+sudo sh -c 'echo "--allow-privileged=true" /var/snap/microk8s/current/args/kube-apiserver'
+```
+Run this command on the controller node
+```
+microk8s stop daemon-apiserver && microk8s start daemon-apiserver
+```
+### 3. Install cert-manager v1.13.3 user by Rancher 
+Run this command in all nodes on the cluster
+```
+microk8s helm3 repo add jetstack https://charts.jetstack.io
+microk8s kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.13.3/cert-manager.crds.yaml
+microk8s kubectl create namespace cert-manager
+microk8s kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
+microk8s helm3 install cert-manager --namespace cert-manager --version v1.13.3 jetstack/cert-manager
+```
+
+### 4. Install stable Rancher
+```
+microk8s kubectl create namespace cattle-system
+microk8s kubectl label namespace cattle-system cattle-system.k8s.io/disable-validation=true
+microk8s helm3 repo add rancher-latest https://releases.rancher.com/server-charts/latest
+microk8s.helm3 repo update
+```
+
+### 5. Set /etc/hosts
+Add the following line in your local hosts file
+```
+{Public.Ip.Address} rancher.tml.dev
+```
+
+### 6. Install command
+Execute:
+```
+microk8s helm3 install rancher rancher-latest/rancher --namespace cattle-system  --set replicas=3 --set hostname=rancher.tml.dev
+```
+if you have some issue like this:
+```
+Error: INSTALLATION FAILED: chart requires kubeVersion: < 1.28.0-0 which is incompatible with Kubernetes v1.28.3
+```
+proceed with:
+```
+sudo snap refresh microk8s --channel=1.27/stable
+```
+and execute again the first command. You should have after this:
+```
+root@k8s-controller:~# microk8s helm3 install rancher rancher-latest/rancher --namespace cattle-system  --set replicas=3 --set hostname=rancher.tml.dev
+NAME: rancher
+LAST DEPLOYED: Mon Jan 15 02:41:17 2024
+NAMESPACE: cattle-system
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+Rancher Server has been installed.
+
+NOTE: Rancher may take several minutes to fully initialize. Please standby while Certificates are being issued, Containers are started and the Ingress rule comes up.
+
+Check out our docs at https://rancher.com/docs/
+
+If you provided your own bootstrap password during installation, browse to https://rancher.tml.dev to get started.
+
+If this is the first time you installed Rancher, get started by running this command and clicking the URL it generates:
+
+```
+echo https://rancher.tml.dev/dashboard/?setup=$(kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}')
+```
+
+To get just the bootstrap password on its own, run:
+
+```
+kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}{{ "\n" }}'
+```
+
+
+Happy Containering!
+root@k8s-controller:~#
+```
+
 
 ## III. Setup Keycloak 23.0.4
