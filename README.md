@@ -213,16 +213,11 @@ If you provided your own bootstrap password during installation, browse to https
 
 If this is the first time you installed Rancher, get started by running this command and clicking the URL it generates:
 
-```
-echo https://rancher.tml.dev/dashboard/?setup=$(kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}')
-```
+# echo https://rancher.tml.dev/dashboard/?setup=$(kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}')
 
 To get just the bootstrap password on its own, run:
 
-```
-kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}{{ "\n" }}'
-```
-
+# kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}{{ "\n" }}'
 
 Happy Containering!
 root@k8s-controller:~#
